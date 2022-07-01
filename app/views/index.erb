@@ -1,11 +1,65 @@
-<div class="mt-4">
-  <div class="bg-light p-5 rounded">
-    <div class="col-sm-8 mx-auto text-center">
-      <h1>Welcome To <%= ENV["SERVER_NAME"] %></h1>
-      <p>An Open Source, Wrath Of The Linch King private server powered by AzerothCore</p>
-      <p>
-        <a class="btn btn-primary" href="/signup" role="button">Create Account</a>
-      </p>
+<div class="px-4 pt-5 my-5 text-center">
+  <h1 class="display-4 fw-bold">Welcome To Potadin</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">We are a small community of WoW players that maintains an open-source Wrath Of The Linch King private server powered by AzerothCore.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      <a href="/signup" class="btn btn-success btn-lg px-4 me-sm-3">Create Account</a>
+      <a href="/#how-to-play" type="button" class="btn btn btn-outline-info btn-lg px-4">How To Play</a>
     </div>
   </div>
+  <div class="overflow-hidden" style="max-height: 30vh;">
+    <div class="container px-5">
+      <img src="/img/header-bg.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" loading="lazy" width="700" height="500">
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-md-center mt-4" id="how-to-play">
+
+	<div class="col-md-8 px-4 py-5">
+		<h2 class="pb-3 border-bottom text-center">How To Play</h2>
+
+		<div class="row g-4 py-5">
+      <div class="col-12 d-flex align-items-start">
+        <div class="icon-square bg-light text-dark d-inline-flex align-items-center justify-content-center fs-3 flex-shrink-0 me-3">
+          <i class="bi bi-person-plus"></i>
+        </div>
+        <div>
+          <h2>Create an Account</h2>
+          <p>You need an account to access the Realm, <a href="/signup">click to create an account.</a> The account is used to log into both the game and our website.</p>
+        </div>
+      </div>
+
+      <div class="col-12 d-flex align-items-start">
+        <div class="icon-square bg-light text-dark d-inline-flex align-items-center justify-content-center fs-3 flex-shrink-0 me-3">
+          <i class="bi bi-cloud-arrow-down"></i>
+        </div>
+        <div>
+          <h2>Download the Game Client</h2>
+          <p>You need a game client of version 3.3.5a, <a href="https://mega.nz/file/pd9lCBwK#SLzZZqLL6KSGxVHP8VuS_HLCF2R4cslZWUi1xs_fJ9I" target="_blank">click to download client from Mega</a></p>
+        </div>
+      </div>
+
+      <div class="col-12 d-flex align-items-start">
+        <div class="icon-square bg-light text-dark d-inline-flex align-items-center justify-content-center fs-3 flex-shrink-0 me-3">
+          <i class="bi bi-menu-down"></i>
+        </div>
+        <div>
+          <h2>Already have a Client!</h2>
+          <p>If you already have a client from elsewhere, make sure its version 3.3.5a then open the "World of Warcraft" folder and change the realmlist deleting all the text inside WoW/Data/enUS/realmlist.wtf replacing with: set realmlist logon.potadin.com</p>
+        </div>
+      </div>
+
+			<div class="col-12 d-flex align-items-start">
+        <div class="icon-square bg-light text-dark d-inline-flex align-items-center justify-content-center fs-3 flex-shrink-0 me-3">
+          <i class="bi bi-journals"></i>
+        </div>
+        <div>
+          <h2>Note</h2>
+          <p>Start the game using WoW.exe, not Launcher.exe. Login using your account name and password (do NOT login with email).</p>
+        </div>
+      </div>
+    </div>
+
+	</div>
 </div>

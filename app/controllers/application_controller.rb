@@ -20,7 +20,7 @@ module Helpers
 		end
 	end
 
-	def redirect_if_not_authorized(user)
+	def redirect_if_user_not_authorized(user)
 		if user != current_user
 			redirect "/login", flash[:message] = "There was an error. Please try again."
 		end
@@ -38,7 +38,7 @@ class ApplicationController < Sinatra::Base
 	end
 
 	get "/" do
-		realms = Auth::Realmlist.all
+		# realms = Auth::Realmlist.all
 
 		# pp realms
 

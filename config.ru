@@ -7,4 +7,5 @@ require "./config/environment.rb"
 use Rack::MethodOverride
 use AccountController
 use DashboardController
+use Dashboard::SettingsController
 run ApplicationController
