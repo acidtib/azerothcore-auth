@@ -39,6 +39,6 @@ services:
 
   web:
     <<: *default-app
-    command: puma config.ru -C config/puma.rb -b tcp://0.0.0.0:$PORT
+    command: bundle exec rackup -s puma -p $PORT --host 0.0.0.0
     ports:
       - "5000:5000"
