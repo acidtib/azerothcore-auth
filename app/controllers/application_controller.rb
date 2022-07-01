@@ -16,7 +16,13 @@ module Helpers
 
 	def redirect_if_not_logged_in
 		if !is_logged_in?(session)
-			redirect "/login"
+			redirect "/login", flash[:message] = "You must be logged in."
+		end
+	end
+
+	def redirect_if_not_authorized(user)
+		if user != current_user
+			redirect "/login", flash[:message] = "There was an error. Please try again."
 		end
 	end
 end

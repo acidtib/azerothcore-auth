@@ -10,4 +10,5 @@ require "./config/environment.rb"
 # use ApplicationController
 # use BooksController
 use AccountController
+use DashboardController
 run ApplicationController

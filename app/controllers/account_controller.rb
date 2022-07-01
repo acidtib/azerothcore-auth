@@ -4,7 +4,7 @@ class AccountController < ApplicationController
 		# redirect_if_not_logged_in
 
 		if is_logged_in?(session)
-			redirect "/", flash[:message] = "You are already logged in."
+			redirect "/dashboard", flash[:message] = "You are already logged in."
 		else
 			erb :"/account/login"
 		end
@@ -17,10 +17,10 @@ class AccountController < ApplicationController
 		account = Auth::Account.find_by_username(username)
 
 		if is_logged_in?(session)
-			redirect "/", flash[:message] = "You are already logged in."
+			redirect "/dashboard", flash[:message] = "You are already logged in."
 		elsif account && verify(account, password)
 			session[:user_id] = account.id
-      redirect "/", flash[:message] = "Welcome, #{account.username}!"
+      redirect "/dashboard", flash[:message] = "Welcome, #{account.username}!"
 		else
 			redirect "/login", flash[:message] = "Your credentials are not correct. Please try again."
 		end
@@ -28,7 +28,7 @@ class AccountController < ApplicationController
 
 	get "/signup" do
 		if is_logged_in?(session)
-			redirect "/", flash[:message] = "You are already logged in."
+			redirect "/dashboard", flash[:message] = "You are already logged in."
 		else
 			erb :"/account/signup"
 		end
@@ -45,7 +45,7 @@ class AccountController < ApplicationController
 		data_params[:verifier] = get_verifier[:verifier]
 
 		if is_logged_in?(session)
-			redirect "/", flash[:message] = "You are already logged in."
+			redirect "/dashboard", flash[:message] = "You are already logged in."
 		elsif params[:email].blank? || params[:username].blank? || params[:password].blank?
 			redirect "/signup", flash[:message] = "Please fill out all requested fields to sign up."
 		else
@@ -53,7 +53,7 @@ class AccountController < ApplicationController
 
 			if account.save
 				session[:user_id] = account.id
-				redirect "/", flash[:message] = "You have successfully created an account. Welcome, #{account.username}."
+				redirect "/dashboard", flash[:message] = "You have successfully created an account. Welcome, #{account.username}."
 			else
 				redirect "/signup", flash[:message] = "This username or email is taken. Please select another one."
 			end
