@@ -1,0 +1,44 @@
+volumes:
+  redis-data: null
+  mysql-data: null
+
+x-app: &default-app
+  build:
+    context: "."
+    dockerfile: Dockerfile.dev
+    args:
+      - "SINATRA_ENV=${SINATRA_ENV:-production}"
+      - "NODE_ENV=${NODE_ENV:-production}"
+  depends_on:
+    - db
+    - redis
+  env_file:
+    - .env
+  tty: true
+  volumes:
+    - .:/app
+
+services:
+  redis:
+    image: redis
+    command: redis-server --requirepass password
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis-data:/data'
+
+  db:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=changeme
+    volumes:
+      - 'mysql-data:/var/lib/mysql'
+
+  web:
+    <<: *default-app
+    command: bundle exec rackup config.ru -p $PORT --host 0.0.0.0
+    ports:
+      - "5000:5000"
