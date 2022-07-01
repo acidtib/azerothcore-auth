@@ -1,9 +1,22 @@
-/.bundle/
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
 /.yardoc
 /_yardoc/
 /coverage/
 /doc/
 /pkg/
 /spec/reports/
-/tmp/
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
 .env
