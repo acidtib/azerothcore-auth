@@ -1,19 +1,30 @@
-<h2 class="title">Sign Up</h2>
-<hr class="login-hr">
-<div class="box">
-    <form action="/signup" method="POST">
-        <div class="field">
-            <label for="email">Email: </label>
-            <input class="input" type="email" id="email" name="email">
-        </div>
-        <div class="field">
-            <label for="username">Username: </label>
-            <input class="input" type="text" id="username" name="username">
-        </div>
-        <div class="field">
-            <label for="password">Password: </label>
-            <input class="input" type="password" id="password" name="password">
-        </div>
-        <button class="button">Submit</button>
-    </form>
+<style>
+.form-signup {
+  max-width: 330px;
+  padding: 15px;
+}
+</style>
+
+<div class="form-signup w-100 m-auto text-center mt-4">
+  <form action="/signup" method="POST">
+    <img class="mb-4" src="/img/logo.png" alt="">
+    <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+
+		<div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingEmailInput" name="email" placeholder="Email" required>
+      <label for="floatingEmailInput">Email</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingUsernameInput" name="username" placeholder="Username" required>
+      <label for="floatingUsernameInput">Username</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="floatingPasswordInput" name="password" placeholder="Password" required>
+      <label for="floatingPasswordInput">Password</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+  </form>
 </div>
