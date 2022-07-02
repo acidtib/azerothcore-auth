@@ -26,7 +26,11 @@
 
 						<hr>
 
-						<button type="submit" class="btn btn-primary">Update</button>
+						<% if current_user.email.blank? %>
+							Please update your email
+						<% else %>
+							<button type="submit" class="btn btn-primary">Update</button>
+						<% end %>
           </form>
         </div>
       </div>
@@ -55,7 +59,7 @@
                   <th scope="col"><i class="fe fe-globe fe-12 text-muted mr-2"></i><%= current_user.os %></th>
                   <td>-</td>
                   <td><%= current_user.last_ip %></td>
-                  <td><%= current_user.last_login.strftime("%B %m, %Y") %></td>
+                  <td><%= current_user.last_login.strftime("%B %m, %Y") if current_user.last_login %></td>
                 </tr>
               </tbody>
           	</table>
