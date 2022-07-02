@@ -6,6 +6,12 @@ module Dashboard
 	
 			erb :"/dashboard/account/settings"
 		end
+
+		get "/account/settings/security" do
+			redirect_if_not_logged_in
+	
+			erb :"/dashboard/account/security"
+		end
 	
 	end
 end

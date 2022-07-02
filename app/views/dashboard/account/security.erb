@@ -1,0 +1,72 @@
+  
+<div class="row gutters-sm my-5">
+  <div class="col-md-3 d-none d-md-block">
+    <%= partial(:"/dashboard/account/partials/nav", :active => "security") %>
+  </div>
+
+  <div class="col-md-9">
+    <div class="card mb-4">
+      <div class="card-header border-bottom mb-3 d-flex d-md-none">
+        <%= partial(:"/dashboard/account/partials/nav_mobile", :active => "security") %>
+      </div>
+
+      <div class="card-body">
+        <div class="">
+          <h6>SECURITY SETTINGS</h6>
+          <hr>
+
+          <form>
+            <div class="form-group">
+              <label class="d-block">Change Password</label>
+              <input type="text" class="form-control mb-3" placeholder="Enter your old password">
+
+              <input type="text" class="form-control mt-1" placeholder="New password">
+              <input type="text" class="form-control mt-1" placeholder="Confirm new password">
+            </div>
+
+						<hr>
+
+						<button type="button" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+		<div class="card">
+			<div class="card-body">
+        <div class="">
+          <h6>SESSIONS</h6>
+          <hr>
+
+          <div class="form-group mb-0">
+            <p class="font-size-sm text-secondary">Latest activity from your account.</p>
+            
+						<table class="table border bg-white">
+              <thead>
+                <tr>
+                  <th>Device</th>
+                  <th>Location</th>
+                  <th>IP</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="col"><i class="fe fe-globe fe-12 text-muted mr-2"></i>Win</th>
+                  <td>Paris, France</td>
+                  <td>192.168.1.10</td>
+                  <td>Apr 24, 2019</td>
+                </tr>
+              </tbody>
+          	</table>
+          </div>
+
+        </div>
+      </div>
+		</div>
+  </div>
+</div>
+
+
+
+

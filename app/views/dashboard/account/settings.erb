@@ -1,20 +1,13 @@
   
 <div class="row gutters-sm my-5">
   <div class="col-md-3 d-none d-md-block">
-    <%= partial(:"/dashboard/account/partials/nav") %>
+    <%= partial(:"/dashboard/account/partials/nav", :active => "account") %>
   </div>
 
   <div class="col-md-9">
     <div class="card">
       <div class="card-header border-bottom mb-3 d-flex d-md-none">
-        <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
-          <li class="nav-item">
-            <a href="/account/settings" class="nav-link has-icon active"><i class="bi bi-person-rolodex"></i></a>
-          </li>
-          <li class="nav-item">
-            <a href="/account/settings/security" class="nav-link has-icon"><i class="bi bi-shield"></i></a>
-          </li>
-        </ul>
+        <%= partial(:"/dashboard/account/partials/nav_mobile", :active => "account") %>
       </div>
 
       <div class="card-body">
