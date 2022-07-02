@@ -52,10 +52,10 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="col"><i class="fe fe-globe fe-12 text-muted mr-2"></i>Win</th>
-                  <td>Paris, France</td>
-                  <td>192.168.1.10</td>
-                  <td>Apr 24, 2019</td>
+                  <th scope="col"><i class="fe fe-globe fe-12 text-muted mr-2"></i><%= current_user.os %></th>
+                  <td>-</td>
+                  <td><%= current_user.last_ip %></td>
+                  <td><%= current_user.last_login.strftime("%B %m, %Y") %></td>
                 </tr>
               </tbody>
           	</table>

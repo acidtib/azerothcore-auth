@@ -27,7 +27,7 @@ module Dashboard
 				redirect "/account/settings", flash[:message] = "Username has already been taken. Please try again."
 			end
 
-			if account.update!(data_params)
+			if account.update(data_params)
 				redirect "/account/settings", flash[:message] = "You have successfully updated your account."
 			else
 				redirect "/account/settings", flash[:message] = "There was an error updating your account. Please try again."
@@ -72,7 +72,7 @@ module Dashboard
 			data_params[:salt] = get_verifier[:salt]
 			data_params[:verifier] = get_verifier[:verifier]
 
-			if account.update!(data_params)
+			if account.update(data_params)
 				redirect "/account/settings/security", flash[:message] = "You have successfully updated your security."
 			else
 				redirect "/account/settings/security", flash[:message] = "There was an error updating your security. Please try again."

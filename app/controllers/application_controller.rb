@@ -11,7 +11,7 @@ module Helpers
 	end
 
 	def current_user
-		Auth::Account.find(session[:user_id])
+		@current_user ||= Auth::Account.find(session[:user_id])
 	end
 
 	def redirect_if_not_logged_in
