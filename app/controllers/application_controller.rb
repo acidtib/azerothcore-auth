@@ -25,6 +25,11 @@ module Helpers
 			redirect "/login", flash[:message] = "There was an error. Please try again."
 		end
 	end
+
+	# <%= partial(:template, :post => post) %>
+	def partial(template, locals = {})
+		erb(template, :layout => false, :locals => locals)
+	end
 end
 
 class ApplicationController < Sinatra::Base
