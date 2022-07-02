@@ -63,7 +63,7 @@
 
 		<div class="container">
 			
-			<% if current_user.email.blank? %>
+			<% if is_logged_in?(session) && current_user.email.blank? %>
 				<div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
 					Please update your email, <a href="/account/settings">update my account</a>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
