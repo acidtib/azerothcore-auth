@@ -1,4 +1,5 @@
 ENV["SINATRA_ENV"] ||= "development"
+ENV['RACK_ENV'] ||= "development"
 
 require "dotenv/load"
 require "bundler/setup"
